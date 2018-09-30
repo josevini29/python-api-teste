@@ -32,6 +32,7 @@ if __name__ == "__main__":
 
     try:
         if (SIS_APP_PROD == '1'): #Produção
+            DATABASE_URL = os.environ['DATABASE_URL'] 
             conn = psycopg2.connect(DATABASE_URL, sslmode='require')
             print('\033[33m AMBIENTE PRODUCAO \033[m')
         elif (SIS_APP_PROD == '0'): #Desenvolvimento
@@ -43,6 +44,7 @@ if __name__ == "__main__":
  
     except:
         print('Erro ao conectar-se ao banco de dados PostgreSQL.')
+        exit()
 
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
