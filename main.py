@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 DATABASE_URL = os.environ['DATABASE_URL']
 #print('Erro ao tentar encontrar variavel de ambiente do banco de dados.')
+print('DATABASE_URL: ' + DATABASE_URL)
 
 @app.route("/")
 def hello():
