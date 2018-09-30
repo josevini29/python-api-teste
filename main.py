@@ -33,7 +33,7 @@ if __name__ == "__main__":
     try:
         if (SIS_APP_PROD == '1'): #Produção
             DATABASE_URL = os.environ['DATABASE_URL'] 
-            conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+            con = psycopg2.connect(DATABASE_URL, sslmode='require')
             print('\033[33m AMBIENTE PRODUCAO \033[m')
         elif (SIS_APP_PROD == '0'): #Desenvolvimento
             con = psycopg2.connect(host='localhost', database='app_python', user='postgres', password='root')
