@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return '{"status":"ok","message":"hello word!","by":"José Vinicius","email":"josevini29@hotmail.com"}', 200
+    return '{"status":"ok","message":"hello word!","by":"José Vinicius","email":"josevini29@hotmail.com","Country":"Brazil"}', 200
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
